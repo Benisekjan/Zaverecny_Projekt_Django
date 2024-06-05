@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detail Položky Objednávky</title>
+</head>
+<body>
+    <h1>Položka objednávky {{ object.objednavky_id_objednavky.id }}</h1>
+    <p>Objednávka: {{ object.objednavky_id_objednavky }}</p>
+    <p>Výrobek: {{ object.zasoby_id_vyrobek }}</p>
+    <a href="{% url 'sklad:polozky_objednavky_list' %}">Zpět na seznam</a>
+</body>
+</html>

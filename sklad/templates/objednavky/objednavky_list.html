@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Objednávky</title>
+</head>
+<body>
+    <h1>Seznam Objednávek</h1>
+    <ul>
+        {% for objednavka in object_list %}
+            <li>
+                <a href="{% url 'sklad:objednavky_detail' objednavka.pk %}">
+                    Objednávka {{ objednavka.id }} - {{ objednavka.datum_objednavky }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

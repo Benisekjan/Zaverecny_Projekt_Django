@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Doprava</title>
+</head>
+<body>
+    <h1>Seznam Dopravců</h1>
+    <ul>
+        {% for dopravce in object_list %}
+            <li>
+                <a href="{% url 'sklad:doprava_detail' dopravce.pk %}">
+                    {{ dopravce.nazev_dopravce }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

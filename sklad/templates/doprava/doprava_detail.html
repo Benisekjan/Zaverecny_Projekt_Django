@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detail Dopravce</title>
+</head>
+<body>
+    <h1>{{ object.nazev_dopravce }}</h1>
+    <p>Adresa: {{ object.adresa_dopravce }}</p>
+    <a href="{% url 'sklad:doprava_list' %}">Zpět na seznam</a>
+</body>
+</html>

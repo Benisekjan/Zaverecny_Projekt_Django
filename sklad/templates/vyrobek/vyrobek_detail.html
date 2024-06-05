@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detail Výrobku</title>
+</head>
+<body>
+    <h1>{{ object.nazev_vyrobku }}</h1>
+    <p>Cena: {{ object.cena_vyrobku }}</p>
+    <p>Dodavatel: {{ object.dodavatele_id_dodavatel }}</p>
+    <a href="{% url 'sklad:vyrobek_list' %}">Zpět na seznam</a>
+</body>
+</html>

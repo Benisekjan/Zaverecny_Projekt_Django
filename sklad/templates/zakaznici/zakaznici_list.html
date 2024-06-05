@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Zákazníci</title>
+</head>
+<body>
+    <h1>Seznam Zákazníků</h1>
+    <ul>
+        {% for zakaznik in object_list %}
+            <li>
+                <a href="{% url 'sklad:zakaznici_detail' zakaznik.pk %}">
+                    {{ zakaznik.jmeno_zakaznik }} {{ zakaznik.prijmeni_zakaznik }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

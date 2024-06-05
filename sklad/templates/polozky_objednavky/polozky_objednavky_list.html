@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Položky Objednávek</title>
+</head>
+<body>
+    <h1>Seznam Položek Objednávek</h1>
+    <ul>
+        {% for polozka in object_list %}
+            <li>
+                <a href="{% url 'sklad:polozky_objednavky_detail' polozka.pk %}">
+                    Položka objednávky {{ polozka.objednavky_id_objednavky.id }} - {{ polozka.zasoby_id_vyrobek.nazev_vyrobku }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

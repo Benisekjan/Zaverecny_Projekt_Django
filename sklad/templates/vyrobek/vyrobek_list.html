@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Výrobky</title>
+</head>
+<body>
+    <h1>Seznam Výrobků</h1>
+    <ul>
+        {% for vyrobek in object_list %}
+            <li>
+                <a href="{% url 'sklad:vyrobek_detail' vyrobek.pk %}">
+                    {{ vyrobek.nazev_vyrobku }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
