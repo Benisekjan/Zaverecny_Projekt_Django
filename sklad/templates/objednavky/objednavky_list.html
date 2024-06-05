@@ -1,18 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Objednávky</title>
-</head>
-<body>
-    <h1>Seznam Objednávek</h1>
-    <ul>
-        {% for objednavka in object_list %}
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="container mt-5">
+        <h1 class="mb-4">Seznam objednávek</h1>
+        <ul>
+            {% for objednavka in objednavky %}
             <li>
-                <a href="{% url 'sklad:objednavky_detail' objednavka.pk %}">
-                    Objednávka {{ objednavka.id }} - {{ objednavka.datum_objednavky }}
-                </a>
+                <a href="{% url 'detail_objednavky' objednavka.id %}">{{ objednavka.id }}</a>
             </li>
-        {% endfor %}
-    </ul>
-</body>
-</html>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

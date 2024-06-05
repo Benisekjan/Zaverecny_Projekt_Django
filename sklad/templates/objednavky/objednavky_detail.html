@@ -1,15 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Detail Objednávky</title>
-</head>
-<body>
-    <h1>Objednávka {{ object.id }}</h1>
-    <p>Datum objednávky: {{ object.datum_objednavky }}</p>
-    <p>Cena objednávky: {{ object.cena_objednavky }}</p>
-    <p>Datum dopravy: {{ object.datum_dopravy }}</p>
-    <p>Dopravce: {{ object.doprava_id_dopravce }}</p>
-    <p>Zákazník: {{ object.zakaznici_id_zakaznik }}</p>
-    <a href="{% url 'sklad:objednavky_list' %}">Zpět na seznam</a>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h1 class="mb-4">{{ objednavky.id }}</h1>
+        <p><strong>Datum objednavky:</strong> {{ objednavky.datum_objednavky }}</p>
+        <p><strong>Celková cena:</strong> {{ objednavky.cena_objednavky }} Kč</p>
+        <p><strong>Datum dopravy:</strong> {{ objednavky.datum_dopravy }} Kč</p>
+        <p><strong>Dopravce:</strong> {{ objednavky.doprava_id_dopravce }} Kč</p>
+        <p><strong>Zákazník:</strong> {{ objednavky.zakaznici_id_zakaznik }}</p>
+    </div>
+{% endblock %}

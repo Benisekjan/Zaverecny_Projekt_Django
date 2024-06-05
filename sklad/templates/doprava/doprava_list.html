@@ -1,18 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Doprava</title>
-</head>
-<body>
-    <h1>Seznam Dopravců</h1>
-    <ul>
-        {% for dopravce in object_list %}
-            <li>
-                <a href="{% url 'sklad:doprava_detail' dopravce.pk %}">
-                    {{ dopravce.nazev_dopravce }}
-                </a>
-            </li>
+{% extends 'base.html' %}
+
+{% block content %}
+
+   <div class="container mt-5">
+        <h1 class="mb-4">Seznam dopravců</h1>
+        {% for dodavatel in dodavatele %}
+        <div class="detail">
+            <div class="info">
+                <h5>{{ dodavatel.jmeno }}</h5>
+            </div>
+            <div class="logo">
+                <img src="{{ dodavatel.logo_url }}" alt="{{ dodavatel.jmeno }}">
+            </div>
+        </div>
         {% endfor %}
-    </ul>
-</body>
-</html>
+    </div>
+
+{% endblock %}

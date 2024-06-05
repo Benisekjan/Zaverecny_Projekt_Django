@@ -1,18 +1,22 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Zákazníci</title>
-</head>
-<body>
-    <h1>Seznam Zákazníků</h1>
-    <ul>
-        {% for zakaznik in object_list %}
-            <li>
-                <a href="{% url 'sklad:zakaznici_detail' zakaznik.pk %}">
-                    {{ zakaznik.jmeno_zakaznik }} {{ zakaznik.prijmeni_zakaznik }}
-                </a>
-            </li>
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+        <h1 class="mb-4">Seznam zákazníků</h1>
+        {% for zakaznik in zakaznici %}
+        <div class="detail">
+            <div class="info">
+                <h5>{{ zakaznik.jmeno }}</h5>
+                <p><strong>Email:</strong> {{ zakaznik.email }}</p>
+                <p><strong>Telefon:</strong> {{ zakaznik.telefon }}</p>
+                <p><strong>Adresa:</strong> {{ zakaznik.adresa }}</p>
+                <p><strong>Popis:</strong> {{ zakaznik.popis }}</p>
+            </div>
+            <div class="logo">
+                <img src="{{ zakaznik.obrazek_url }}" alt="{{ zakaznik.jmeno }}">
+            </div>
+        </div>
         {% endfor %}
-    </ul>
-</body>
-</html>
+</div>
+{% endblock %}

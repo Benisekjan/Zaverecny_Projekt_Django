@@ -1,60 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Úvodní Stránka</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-        }
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            background-color: #333;
-        }
-        nav ul li {
-            display: inline;
-            margin-right: 10px;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            padding: 8px 16px;
-            display: inline-block;
-        }
-        nav ul li a:hover {
-            background-color: #111;
-        }
-        .container {
-            padding: 20px;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Vítejte na Naší Stránce</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="{% url 'sklad:dodavatele_list' %}">Dodavatelé</a></li>
-            <li><a href="{% url 'sklad:zakaznici_list' %}">Zákazníci</a></li>
-            <li><a href="{% url 'sklad:doprava_list' %}">Doprava</a></li>
-            <li><a href="{% url 'sklad:objednavky_list' %}">Objednávky</a></li>
-            <li><a href="{% url 'sklad:vyrobek_list' %}">Výrobky</a></li>
-            <li><a href="{% url 'sklad:polozky_objednavky_list' %}">Položky Objednávek</a></li>
-        </ul>
-    </nav>
-    <div class="container">
+{% extends 'base.html' %}
+
+{% block content %}
+ <div class="row">
+        <div class="col-12 text-center bg-info mt-3 mb-3 box-rounded">
+            <h2 class="text-white p-3">Vítejte na Naší Stránce</h2>
+        </div>
+     <div class="col-lg-3 col-md-6 text-center">
         <h2>O nás</h2>
         <p>
             Vítáme vás na naší stránce. Tato aplikace umožňuje spravovat dodavatele, zákazníky, dopravu, objednávky, výrobky a položky objednávek. Klikněte na odkazy výše pro více informací.
         </p>
     </div>
-</body>
-</html>
+
+
+    </div>
+{% endblock %}
+

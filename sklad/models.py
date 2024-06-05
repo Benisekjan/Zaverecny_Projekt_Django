@@ -75,19 +75,9 @@ class Objednavky(models.Model):
 
 
 class Vyrobek(models.Model):
-    cena_vyrobku = models.IntegerField(
-        verbose_name='Cena výrobku',
-        help_text='Zadejte cenu výrobku'
-    )
-    nazev_vyrobku = models.CharField(
-        max_length=50,
-        verbose_name='Název výrobku',
-        help_text='Zadejte název výrobku'
-    )
-    dodavatele_id_dodavatel = models.ForeignKey(
-        'Dodavatele',
-        on_delete=models.CASCADE
-    )
+    cena_vyrobku = models.IntegerField(verbose_name='Cena výrobku', help_text='Zadejte cenu výrobku')
+    nazev_vyrobku = models.CharField(max_length=50, verbose_name='Název výrobku', help_text='Zadejte název výrobku')
+    dodavatele_id_dodavatel = models.ForeignKey('Dodavatele',on_delete=models.CASCADE)
 
     class Meta:
         db_table = 'vyrobky'
@@ -100,14 +90,8 @@ class Vyrobek(models.Model):
 
 
 class PolozkyObjednavky(models.Model):
-    objednavky_id_objednavky = models.ForeignKey(
-        'Objednavky',
-        on_delete=models.CASCADE
-    )
-    zasoby_id_vyrobek = models.ForeignKey(
-        'Vyrobek',
-        on_delete=models.CASCADE
-    )
+    objednavky_id_objednavky = models.ForeignKey('Objednavky',on_delete=models.CASCADE)
+    zasoby_id_vyrobek = models.ForeignKey('Vyrobek',on_delete=models.CASCADE)
 
     class Meta:
         db_table = 'polozky_objednavky'

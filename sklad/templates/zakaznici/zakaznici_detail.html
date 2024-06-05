@@ -1,16 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Detail Zákazníka</title>
-</head>
-<body>
-    <h1>{{ object.jmeno_zakaznik }} {{ object.prijmeni_zakaznik }}</h1>
-    <p>Email: {{ object.email_zakaznik }}</p>
-    <p>Telefon: {{ object.telefon_zakaznik }}</p>
-    <p>Země: {{ object.zeme_zakaznik }}</p>
-    <p>Město: {{ object.mesto_zakaznik }}</p>
-    <p>Ulice: {{ object.ulice_zakaznik }}</p>
-    <p>Psč: {{ object.psc_zakaznik }}</p>
-    <a href="{% url 'sklad:zakaznici_list' %}">Zpět na seznam</a>
-</body>
-</html>
+{% extends 'base.html' %}
+
+    {% block content %}
+
+    <div class="container mt-5">
+        <h1 class="mb-4">Detail zákazníka</h1>
+        <div>
+            <p><strong>Jméno:</strong> {{ zakaznici.jmeno_zakaznik }}</p>
+            <p><strong>Příjmení:</strong> {{ zakaznici.prijmeni_zakaznik }}</p>
+            <p><strong>Email:</strong> {{ zakaznici.email_zakaznik }}</p>
+            <p><strong>Telefon:</strong> {{ zakaznici.telefon_zakaznik }}</p>
+            <p><strong>Země:</strong> {{ zakaznici.zeme_zakaznik }}</p>
+            <p><strong>Město:</strong> {{ zakaznici.mesto_zakaznik }}</p>
+            <p><strong>Ulice:</strong> {{ zakaznici.ulice_zakaznik }}</p>
+            <p><strong>Psč:</strong> {{ zakaznici.psc_zakaznik }}</p>
+        </div>
+    </div>
+   {% endblock %}

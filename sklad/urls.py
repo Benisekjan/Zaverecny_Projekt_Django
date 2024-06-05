@@ -7,8 +7,9 @@ app_name = 'sklad'
 
 urlpatterns = [
     path('', TemplateView.as_view(template_name='index.html'), name='index'),
-    path('dodavatele', views.DodavateleListView.as_view(template_name=''), name='dodavatele_list'),
-    path('dodavatele/<int:pk>/', views.DodavateleDetailView.as_view(template_name=''), name='dodavatele_detail'),
+    path('dodavatele/', views.DodavateleListView.as_view(), name='dodavatele_list'),
+    path('dodavatele/<int:pk>/', views.DodavateleDetailView.as_view(), name='dodavatele_detail'),
+    path('objednavky/<int:objednavka_id>/polozky_objednavky/', views.PolozkyObjednavky, name='polozky_objednavky'), #nevím jestli jede
     path('zakaznici', views.ZakazniciListView.as_view(), name='zakaznici_list'),
     path('zakaznici/<int:pk>/', views.ZakazniciDetailView.as_view(), name='zakaznici_detail'),
     path('doprava', views.DopravaListView.as_view(), name='doprava_list'),

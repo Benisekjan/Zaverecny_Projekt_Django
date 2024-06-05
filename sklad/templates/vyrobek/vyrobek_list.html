@@ -1,18 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Výrobky</title>
-</head>
-<body>
-    <h1>Seznam Výrobků</h1>
-    <ul>
-        {% for vyrobek in object_list %}
-            <li>
-                <a href="{% url 'sklad:vyrobek_detail' vyrobek.pk %}">
-                    {{ vyrobek.nazev_vyrobku }}
-                </a>
-            </li>
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+        <h1 class="mb-4">Seznam výrobků</h1>
+        {% for vyrobek in Vyrobek %}
+        <div class="detail">
+            <div class="info">
+                <h5>{{ vyrobek.nazev_vyrobku }}</h5>
+            </div>
+            <div class="logo">
+                <img src="{{ vyrobek.obrazek_url }}" alt="{{ vyrobek.nazev_vyrobku }}">
+            </div>
+        </div>
         {% endfor %}
-    </ul>
-</body>
-</html>
+    </div>
+
+{% endblock %}

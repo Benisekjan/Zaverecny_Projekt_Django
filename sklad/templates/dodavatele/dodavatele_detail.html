@@ -1,13 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Detail Dodavatele</title>
-</head>
-<body>
-    <h1>{{ object.nazev_dodavatele }}</h1>
-    <p>Email: {{ object.email_dodavatele }}</p>
-    <p>Telefon: {{ object.telefon_dodavatele }}</p>
-    <p>Kontaktní Osoba: {{ object.kontaktOs_dodavatele }}</p>
-    <a href="{% url 'sklad:dodavatele_list' %}">Zpět na seznam</a>
-</body>
-</html>
+ {% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+        <h1 class="mb-4">Detail dodavatele</h1>
+        <div>
+            <p><strong>Jméno:</strong> {{ dodavatele.nazev_dodavatele }}</p>
+            <p><strong>Kontakní osoba:</strong> {{ dodavatele.adresa }}</p>
+            <p><strong>Telefon:</strong>{{ dodavatele.telefon_dodavatele }}</p>
+            <p><strong>E-mail:</strong>{{ dodavatele.email_dodavatele }}</p>
+        </div>
+    </div>
+{% endblock %}
