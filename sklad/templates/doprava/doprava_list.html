@@ -4,13 +4,13 @@
 
    <div class="container mt-5">
         <h1 class="mb-4">Seznam dopravců</h1>
-        {% for dodavatel in dodavatele %}
+        {% for dopravce in dopravci %}
         <div class="detail">
             <div class="info">
-                <h5>{{ dodavatel.jmeno }}</h5>
+                <h5> <a href="{% url 'sklad:doprava_detail' dopravce.pk %}" > {{ dopravce.nazev_dopravce }} </a></h5>
             </div>
             <div class="logo">
-                <img src="{{ dodavatel.logo_url }}" alt="{{ dodavatel.jmeno }}">
+                <img src="{{ dopravce.fotografie.url }}" alt="{{ dopravce}}">
             </div>
         </div>
         {% endfor %}

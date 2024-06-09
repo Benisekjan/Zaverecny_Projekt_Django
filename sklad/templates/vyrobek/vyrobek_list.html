@@ -4,10 +4,10 @@
 
 <div class="container mt-5">
         <h1 class="mb-4">Seznam výrobků</h1>
-        {% for vyrobek in Vyrobek %}
+        {% for vyrobek in vyrobky %}
         <div class="detail">
             <div class="info">
-                <h5>{{ vyrobek.nazev_vyrobku }}</h5>
+                <h5> <a href="{% url 'sklad:vyrobek_detail' vyrobek.pk %}" > {{ vyrobek.nazev_vyrobku }}</a></h5>
             </div>
             <div class="logo">
                 <img src="{{ vyrobek.obrazek_url }}" alt="{{ vyrobek.nazev_vyrobku }}">

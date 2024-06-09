@@ -2,11 +2,13 @@
 
 {% block content %}
     <div class="container mt-5">
-        <h1 class="mb-4">{{ objednavky.id }}</h1>
-        <p><strong>Datum objednavky:</strong> {{ objednavky.datum_objednavky }}</p>
-        <p><strong>Celková cena:</strong> {{ objednavky.cena_objednavky }} Kč</p>
-        <p><strong>Datum dopravy:</strong> {{ objednavky.datum_dopravy }} Kč</p>
-        <p><strong>Dopravce:</strong> {{ objednavky.doprava_id_dopravce }} Kč</p>
-        <p><strong>Zákazník:</strong> {{ objednavky.zakaznici_id_zakaznik }}</p>
+        <h1 class="mb-4"> Čislo objednávky: {{ objednavka.pk }}</h1>
+        <p><strong>Datum objednavky:</strong> {{ objednavka.datum_objednavky }}</p>
+        <p><strong>Celková cena:</strong> {{ objednavka.cena_objednavky }} Kč</p>
+        <p><strong>Datum dopravy:</strong> {{ objednavka.datum_dopravy }} </p>
+        <p><strong>Dopravce:</strong> {{ objednavka.doprava_id_dopravce }} </p>
+        <p><strong>Zákazník:</strong> {{ objednavka.zakaznici_id_zakaznik }}</p>
+        <p><strong>Položky objednávky:</strong> <a href="{% url 'sklad:polozky_objednavky_detail' objednavka.pk %}">  </a> </p>
+
     </div>
 {% endblock %}

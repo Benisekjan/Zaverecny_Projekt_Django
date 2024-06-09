@@ -1,3 +1,5 @@
+{% load static %}
+
 <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
     <a class="navbar-brand navbar-marg text-light" href="#">Úvodní stránka <span class="sr-only">(current)</span></a>
     <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
@@ -12,9 +14,11 @@
                     <a class="navbar-brand navbar-marg text-light" href="{% url 'sklad:dodavatele_list' %}">Dodavatelé</a>
                     <a class="navbar-brand navbar-marg text-light" href="{% url 'sklad:zakaznici_list' %}">Zákazníci</a>
                     <a class="navbar-brand navbar-marg text-light" href="{% url 'sklad:doprava_list' %}">Doprava</a>
-                    <a class="navbar-brand navbar-marg text-light" href="{% url 'sklad:objednavky_list' %}">Objednávky</a>
                     <a class="navbar-brand navbar-marg text-light" href="{% url 'sklad:vyrobek_list' %}">Výrobky</a>
+                    <a class="navbar-brand navbar-marg text-light" href="{% url 'sklad:objednavky_list' %}">Objednávky</a>  
+                    <a class="navbar-brand navbar-marg text-light" href="{% url 'sklad:polozky_objednavky_list' %}">Položky Objednávky</a>
             </li>
         </ul>
     </div>
+    
 </nav>

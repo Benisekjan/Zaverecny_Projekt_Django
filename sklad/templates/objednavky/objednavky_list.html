@@ -4,12 +4,10 @@
 
     <div class="container mt-5">
         <h1 class="mb-4">Seznam objednávek</h1>
-        <ul>
+        <div class="list-group">
             {% for objednavka in objednavky %}
-            <li>
-                <a href="{% url 'detail_objednavky' objednavka.id %}">{{ objednavka.id }}</a>
-            </li>
+               <h5>Objednávka Č. :<a href="{% url 'sklad:objednavky_detail' objednavka.pk %}"> {{ objednavka.pk }}</a></h5>
             {% endfor %}
-        </ul>
+        </div>
     </div>
 {% endblock %}

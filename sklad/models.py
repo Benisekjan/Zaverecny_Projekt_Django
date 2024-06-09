@@ -5,6 +5,7 @@ class Dodavatele(models.Model):
     email_dodavatele= models.CharField(max_length=50, unique=True, verbose_name='Email', help_text='Vložte email Dodavatele')
     telefon_dodavatele=  models.CharField(max_length=13, unique=True, verbose_name='Cislo', help_text='Vložte číslo Dodavatele')
     kontaktOs_dodavatele= models.CharField(max_length=50, verbose_name='Kontaktni Osoba', help_text='Vložte email Dodavatele')
+    fotografie = models.ImageField(upload_to='dodavatele', verbose_name='Fotografie', default='../media/img/dodavatele.png')
 
     class Meta:
         verbose_name = 'Dodavatel'
@@ -19,11 +20,11 @@ class Zakaznici(models.Model):
     jmeno_zakaznik = models.CharField(max_length=50, verbose_name='Jmeno zákazníka',help_text='Zadejte jméno ')
     prijmeni_zakaznik = models.CharField(max_length=50, verbose_name='Příjmení zákazníka',help_text='Zadejte příjmení')
     email_zakaznik = models.CharField(max_length=50, unique=True, verbose_name='Email zákazníka',help_text='Zadejte email')
-    telefon_zakaznik = models.IntegerField(max_length=13, unique=True, verbose_name='Telefon zákazníka',help_text='Zadejte telefon')
+    telefon_zakaznik = models.CharField(max_length=13, unique=True, verbose_name='Telefon zákazníka',help_text='Zadejte telefon')
     zeme_zakaznik = models.CharField(max_length=50,verbose_name='Země',help_text='Zadejte název Země')
     mesto_zakaznik = models.CharField(max_length=50,verbose_name='Město',help_text='Název Města')
     ulice_zakaznik = models.CharField(max_length=50,verbose_name='Ulice',help_text='Název Ulici')
-    psc_zakaznik = models.IntegerField(max_length=6,verbose_name='Psč',help_text='Psč města')
+    psc_zakaznik = models.IntegerField(verbose_name='Psč',help_text='Psč města')
 
     class Meta:
         db_table = 'zakaznici'
@@ -37,8 +38,9 @@ class Zakaznici(models.Model):
 
 
 class Doprava(models.Model):
-    nazev_dopravce = models.CharField(max_length=50, verbose_name='Nazev dopravce',help_text='Zadejte název dopravce')
-    adresa_dopravce = models.CharField(max_length=50, verbose_name='Adresa dopravce',help_text='Zadejte adresu dopravce')
+    nazev_dopravce = models.CharField(max_length=50, verbose_name='Nazev dopravce', help_text='Zadejte název dopravce')
+    adresa_dopravce = models.CharField(max_length=50, verbose_name='Adresa dopravce', help_text='Zadejte adresu dopravce')
+    fotografie = models.ImageField(upload_to='dopravci', verbose_name='Fotografie', blank=True, null=True)
 
     class Meta:
         db_table = 'doprava'
@@ -51,18 +53,13 @@ class Doprava(models.Model):
 
 
 class Objednavky(models.Model):
-    # Zde bylo odstraněno pole polozky_objenavky
 
     datum_objednavky = models.DateField(verbose_name='Datum objednávky', help_text='Zadejte datum objednávky')
-    cena_objednavky = models.IntegerField(max_length=10, verbose_name='Cena objednávky',
+    cena_objednavky = models.IntegerField(verbose_name='Cena objednávky',
                                           help_text='Zadejte cenu objednávky')
     datum_dopravy = models.DateField(verbose_name='Datum dopravy', help_text='Zadejte datum dopravy')
     doprava_id_dopravce = models.ForeignKey(Doprava, on_delete=models.CASCADE)
     zakaznici_id_zakaznik = models.ForeignKey(Zakaznici, on_delete=models.CASCADE)
-
-    # PolozkyObjednavky jsou reprezentovány jako vazba mezi Objednavky a Vyrobek
-    # To je realizováno pomocí ForeignKey k Objednavky a Vyrobek modelů.
-    # Viz. definice PolozkyObjednavky níže.
 
     class Meta:
         db_table = 'objednavky'

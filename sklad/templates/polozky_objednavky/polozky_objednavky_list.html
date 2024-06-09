@@ -4,10 +4,10 @@
 
 
     <div class="container mt-5">
-        <h1 class="mb-4">Seznam položek objednávky - {{ objednavky.id }}</h1>
+        <h1 class="mb-4">Seznam položek objednávky </h1>
         <ul>
-            {% for polozka in PolozkyObjednavky %}
-            <p>{{ polozka.objednavky_id_objednavky }}</p>
+            {% for polozka in polozky %}
+            <h5> <a href="{% url 'sklad:polozky_objednavky_detail' polozka.pk %}">{{ polozka.objednavky_id_objednavky }}</a> </h5>
             {% endfor %}
         </ul>
     </div>

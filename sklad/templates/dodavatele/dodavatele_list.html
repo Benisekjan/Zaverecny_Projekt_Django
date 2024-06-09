@@ -8,10 +8,10 @@
             {% for dodavatel in dodavatele %}
             <div class="item">
                 <div class="info">
-                    <h5>{{ dodavatel.jmeno }}</h5>
+                    <h5> <a href="{% url 'sklad:dodavatele_detail' dodavatel.pk %}" > {{ dodavatel.nazev_dodavatele }} </a></h5>
                 </div>
                 <div class="logo">
-                    <img src="{{ dodavatel.logo_url }}" alt="{{ dodavatel.jmeno }}">
+                    <img src="{{ dodavatel.logo_url }}" alt="{{ dodavatel.nazev_dodavatele }}">
                 </div>
             </div>
             {% endfor %}

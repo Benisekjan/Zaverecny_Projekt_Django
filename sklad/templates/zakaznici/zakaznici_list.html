@@ -7,14 +7,10 @@
         {% for zakaznik in zakaznici %}
         <div class="detail">
             <div class="info">
-                <h5>{{ zakaznik.jmeno }}</h5>
-                <p><strong>Email:</strong> {{ zakaznik.email }}</p>
-                <p><strong>Telefon:</strong> {{ zakaznik.telefon }}</p>
-                <p><strong>Adresa:</strong> {{ zakaznik.adresa }}</p>
-                <p><strong>Popis:</strong> {{ zakaznik.popis }}</p>
+                <h5><a href="{% url 'sklad:zakaznici_detail' zakaznik.pk %}" >{{ zakaznik.jmeno_zakaznik }}</a></h5>
             </div>
             <div class="logo">
-                <img src="{{ zakaznik.obrazek_url }}" alt="{{ zakaznik.jmeno }}">
+                <img src="{{ zakaznik.obrazek_url }}" alt="{{ zakaznik }}">
             </div>
         </div>
         {% endfor %}
