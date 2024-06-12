@@ -9,9 +9,7 @@
             <div class="info">
                 <h5> <a href="{% url 'sklad:vyrobek_detail' vyrobek.pk %}" > {{ vyrobek.nazev_vyrobku }}</a></h5>
             </div>
-            <div class="logo">
-                <img src="{{ vyrobek.obrazek_url }}" alt="{{ vyrobek.nazev_vyrobku }}">
-            </div>
+
         </div>
         {% endfor %}
     </div>

@@ -2,7 +2,7 @@
 
     {% block content %}
 
-    <div class="container mt-5">
+    <div class="container mt-5 detail-container">
         <h1 class="mb-4">Detail zákazníka</h1>
         <div>
             <p><strong>Jméno:</strong> {{ zakaznik.jmeno_zakaznik }}</p>
@@ -13,6 +13,9 @@
             <p><strong>Město:</strong> {{ zakaznik.mesto_zakaznik }}</p>
             <p><strong>Ulice:</strong> {{ zakaznik.ulice_zakaznik }}</p>
             <p><strong>Psč:</strong> {{ zakaznik.psc_zakaznik }}</p>
+        </div>
+        <div class="customer-photo">
+            <img src="{{ zakaznik.fotografie.url }}" alt="{{ zakaznik }}">
         </div>
     </div>
    {% endblock %}

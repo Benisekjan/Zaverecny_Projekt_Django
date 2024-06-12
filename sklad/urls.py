@@ -1,6 +1,7 @@
 from django.urls import path
 from . import views
 
+
 from django.views.generic import TemplateView
 
 app_name = 'sklad'
@@ -21,3 +22,5 @@ urlpatterns = [
     path('polozky_objednavky', views.PolozkyObjednavkyListView.as_view(), name='polozky_objednavky_list'),
     path('polozky_objednavky/<int:pk>/', views.PolozkyObjednavkyDetailView.as_view(), name='polozky_objednavky_detail'),
 ]
+
+

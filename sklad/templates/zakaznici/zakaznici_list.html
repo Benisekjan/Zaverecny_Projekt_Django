@@ -10,7 +10,7 @@
                 <h5><a href="{% url 'sklad:zakaznici_detail' zakaznik.pk %}" >{{ zakaznik.jmeno_zakaznik }}</a></h5>
             </div>
             <div class="logo">
-                <img src="{{ zakaznik.obrazek_url }}" alt="{{ zakaznik }}">
+                <img src="{{ zakaznik.fotografie.url }}" alt="{{ zakaznik }}">
             </div>
         </div>
         {% endfor %}

@@ -1,5 +1,5 @@
 header {
-    background-image: url('../img/cyklistika-logo.png');
+    background-image: url('../img/storage-logo.png');
     background-repeat: no-repeat;
     background-position: right 5% center;
 }
@@ -32,4 +32,16 @@ header {
     padding: 20px;
     border-bottom: 1px solid #ddd;
     margin-bottom: 20px;
+}
+
+.customer-photo {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    max-height: 20px; /* Adjust the size as needed */
+    width: auto; /* Keeps the aspect ratio */
+    border-radius: 50%; /* Makes the photo circular, remove if not needed */
+}
+.detail-container {
+    position: relative;
 }
