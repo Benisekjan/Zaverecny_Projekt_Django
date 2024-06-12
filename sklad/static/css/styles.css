@@ -45,3 +45,8 @@ header {
 .detail-container {
     position: relative;
 }
+
+.logo-dop{
+    position: static;
+    padding-bottom: 10px;
+}

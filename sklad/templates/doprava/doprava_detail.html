@@ -2,12 +2,15 @@
 
     {% block content %}
 
-<div class="container mt-5">
+<div class="container mt-5 detail-container">
         <h1 class="mb-4">Detail dopravce</h1>
         <div>
             <p><strong>Název dopravce:</strong> {{ dopravce.nazev_dopravce }}</p>
             <p><strong>Adresa:</strong> {{ dopravce.adresa_dopravce }}</p>
         </div>
     </div>
+        <div class="logo-dop">
+            <img src="{{ dopravce.fotografie.url }}" alt="{{ dopravce}}">
+        </div>
 
    {% endblock %}
